@@ -1,0 +1,26 @@
+# IDE
+.vscode/
+
+# データ・モデル・出力（README.md だけ追跡）
+data/*
+!data/README.md
+models/*
+!models/README.md
+outputs/*
+!outputs/README.md
+
+# 仮想環境（README.md だけ追跡）
+venv/*
+!venv/README.md
+
+# 配布用メタ情報は無視
+pre_commit.egg-info/
+
+# Python のキャッシュ
+__pycache__/
+*.py[cod]
+
+# その他よく無視するもの
+*.egg-info/
+*.egg
+*.pyc

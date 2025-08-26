@@ -1,0 +1,16 @@
+
+# コード整形・Lint
+black
+covdefaults>=2.2
+coverage
+flake8
+isort
+# 開発用ツール
+pre-commit
+pytest
+pytest-env
+pyupgrade
+
+# YAMLファイル処理
+pyyaml
+tox
