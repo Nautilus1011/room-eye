@@ -1,10 +1,19 @@
-
 # コード整形・Lint
 black
 covdefaults>=2.2
 coverage
 flake8
+ipywidgets
 isort
+jupyterlab
+matplotlib
+notebook
+onnx
+onnxruntime
+
+# 機械学習 / モデル作成
+opencv-python
+pillow
 # 開発用ツール
 pre-commit
 pytest
@@ -13,4 +22,7 @@ pyupgrade
 
 # YAMLファイル処理
 pyyaml
+rich
+torch
+torchvision
 tox
