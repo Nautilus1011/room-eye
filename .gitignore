@@ -13,6 +13,10 @@ outputs/*
 venv/*
 !venv/README.md
 
+# 外部リポジトリ
+external/*
+!external/README.md
+
 # 配布用メタ情報は無視
 pre_commit.egg-info/
 
