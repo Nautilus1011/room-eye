@@ -1,28 +1,36 @@
+# PyTorch（ベースイメージにすでに含まれるが、バージョン固定のため明示）
+# --extra-index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+
+# 物体検出・画像認識
+ultralytics
+onnx
+onnxruntime
+opencv-python
+pillow
+
+# Jupyter 実験環境
+jupyterlab
+notebook
+ipywidgets
+
+# データ処理・可視化
+numpy
+matplotlib
+rich
+
 # コード整形・Lint
 black
 covdefaults>=2.2
 coverage
 flake8
-ipywidgets
 isort
-jupyterlab
-matplotlib
-notebook
-onnx
-onnxruntime
-
-# 機械学習 / モデル作成
-opencv-python
-pillow
-# 開発用ツール
 pre-commit
 pytest
 pytest-env
 pyupgrade
 
-# YAMLファイル処理
+# その他
 pyyaml
-rich
-torch
-torchvision
 tox
