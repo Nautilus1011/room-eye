@@ -1,21 +1,29 @@
 {
   "recommendations": [
+    // Python開発
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    // Jupyter
+    "ms-toolsai.jupyter",
+    "ms-toolsai.vscode-jupyter-slideshow",
+    // Dev Containers
+    "ms-vscode-remote.remote-containers",
+    // Docker
     "ms-azuretools.vscode-docker",
+    // Git
     "mhutchie.git-graph",
     "github.vscode-pull-request-github",
     "eamodio.gitlens",
+    // 見た目・補助
     "github.github-vscode-theme",
-    "vtrois.gitmoji-vscode",
-    "ms-ceintl.vscode-language-pack-ja",
-    "ms-vsliveshare.vsliveshare",
-    "ms-vsliveshare.vsliveshare-audio",
-    "pnp.polacode",
-    "gruntfuggly.todo-tree",
-    "shardulm94.trailing-spaces",
-    "visualstudioexptteam.vscodeintellicode",
     "vscode-icons-team.vscode-icons",
-    "mosapride.zenkaku",
+    "visualstudioexptteam.vscodeintellicode",
+    "oderwat.indent-rainbow",
+    "shardulm94.trailing-spaces",
+    "gruntfuggly.todo-tree",
     "davidanson.vscode-markdownlint",
-    "oderwat.indent-rainbow"
+    "mosapride.zenkaku",
+    "ms-ceintl.vscode-language-pack-ja"
   ]
 }

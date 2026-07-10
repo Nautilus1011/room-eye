@@ -1,14 +1,18 @@
-## 🔨 変更内容 / Details of Changes
-<!-- どのような変更なのかを明確かつ簡潔に説明してください。 -->
-<!-- A clear and concise description of what the change is. -->
-- xxx
+## 変更内容
 
-## 📸 スクリーンショット / Screenshots
-<!-- スクリーンショットがあるとレビューしやすいです。 -->
-<!-- Changes would be easier to review with screenshots. -->
+- <変更点>
 
-## ✅ 解決する issues / Resolved Issues
-- close #0
+## 関連Issue
 
-## 📝 関連する issues / Related Issues
-- #0
+- #
+
+## 動作確認
+
+- [ ] `python3 -m compileall src experiment`
+- [ ] 対象スクリプトの限定実行
+- [ ] Docker コンテナ内での動作確認
+- [ ] 推論・検出の実行
+
+## 補足情報
+
+<重い検証を省略した理由や前提条件があれば記載>

@@ -1,5 +1,7 @@
-# IDE
-.vscode/
+# IDE（推奨拡張・設定ファイルは追跡する）
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 
 # データ・モデル・出力（README.md だけ追跡）
 data/*
