@@ -81,3 +81,4 @@ docker compose exec dev bash -lc "python3 -m compileall src experiment"
 - `.claude/rules/coding-standards.md`
 - `.claude/rules/cv-research.md`
 - `.claude/rules/project-guardrails.md`
+- `.claude/rules/survey-workflow.md`
