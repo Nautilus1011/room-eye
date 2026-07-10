@@ -1,0 +1,46 @@
+{
+  "name": "room-eye",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/app",
+  "remoteUser": "devuser",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Python開発
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        // Jupyter
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        // Git
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        // Docker
+        "ms-azuretools.vscode-docker",
+        // 見た目・補助
+        "vscode-icons-team.vscode-icons",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+        "gruntfuggly.todo-tree",
+        "davidanson.vscode-markdownlint",
+        "mosapride.zenkaku",
+        "ms-ceintl.vscode-language-pack-ja"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter"
+        },
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "jupyter.notebookFileRoot": "${workspaceFolder}"
+      }
+    }
+  }
+}
