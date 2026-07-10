@@ -1,77 +1,78 @@
-# Room Eye（リポジトリ/プロジェクト/OSSなどの名前）
+# Room Eye
 
-このリポジトリは自分の部屋をスマートホーム化するためのプロジェクトです。
-ラズベリーパイなどのワンボードコンピュータでリアルタイム物体検出を常時行い、特定の物体を認識した際にさまざまな操作を自動化することが目的です。
+ラズベリーパイ + カメラ + 画像認識技術を使って、自室の利便性向上・課題解決を図るプロジェクトです。
 
-## DEMO
+## プロジェクトの目的
 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
-使い方について簡単に説明する項目
+部屋にカメラを設置し、常時または定期的に映像を解析することで以下を実現します。
 
-## Features
+### 操作自動化（ジェスチャーコントロール）
 
-"hoge"のセールスポイントや差別化などを説明する
+| ジェスチャー | アクション |
+|---|---|
+| 特定のハンドサイン | デスクトップPC の Wake on LAN |
+| 特定のハンドサイン | 扇風機のオン/オフ |
+| 特定のハンドサイン | 部屋の照明のオン/オフ |
 
-## Requirement
+### 部屋の状態モニタリング
 
-"hoge"を動かすのに必要なライブラリなどを列挙する
+- **床面積の計測**: 床の空き面積を算出し、部屋の散らかり具合を定量化
+- **物体カウント**: コップやペットボトルなどの数を検出し、片付けを促す通知を出す
 
-* huga 3.5.2
-* hogehuga 1.0.2
+## システム構成（予定）
 
-## Installation
-
-Requirementで列挙したライブラリなどのインストール方法を説明する
-
-```bash
-pip install huga_package
+```
+[Raspberry Pi + Camera]
+        |
+   物体検出 / 姿勢推定（YOLO系）
+        |
+   ┌────┴─────────────────┐
+   |                      |
+ジェスチャー認識        部屋状態の解析
+   |                      |
+スマートデバイス制御    通知・レポート出力
+(Wake on LAN / 家電)
 ```
 
-## Usage
+## 技術スタック
 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
+- **推論**: YOLO（最新バージョンを採用予定）
+- **実行環境**: Raspberry Pi（ARM64）
+- **開発環境**: Docker
+- **言語**: Python 3.9+
 
+## ディレクトリ構成
 
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+```
+room-eye/
+├── experiment/       # 実験・検証用 Notebook・スクリプト
+│   └── yolov5/       # YOLOv5 推論テスト（初期実験）
+├── external/         # 外部リポジトリ（clone先）
+├── data/             # 学習・推論用データ
+├── models/           # モデルファイル
+├── outputs/          # 推論結果・出力
+├── scripts/          # 実行スクリプト
+├── notebooks/        # 分析・可視化用 Notebook
+└── tests/            # テストコード
 ```
 
-## Scripts & Notebooks
-今回のプロジェクトに取り組むにあたって作成したスクリプトとノートブックに関する説明を簡単に記載しておきます。
+## 開発環境セットアップ
 
-### Scripts
+> Docker ベースの環境整備が進行中です（[#8](https://github.com/Nautilus1011/room-eye/issues/8)）。
+> 現状はローカル venv での作業を想定しています。
 
-### Notebooks
-`infer-yolov5.ipynb`
-
-yolov5s.ptの推論テストを実施したノートブック。
-
-
-## Note
-
-### 開発環境セットアップ
-以下のコマンドを実行して開発環境を構築する
 ```bash
 pip install -e .
 pip install -r requirements-dev.txt
 pre-commit install
 ```
 
-## Author
+## 実験記録
 
-作成情報を列挙する
-
-* 作成者
-* 所属
-* E-mail
+| Notebook | 内容 |
+|---|---|
+| `experiment/yolov5/infer-yolov5.ipynb` | YOLOv5s.pt による推論テスト（初期実験） |
 
 ## License
-ライセンスを明示する
 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
-社内向けなら社外秘であることを明示してる
-
-"hoge" is Confidential.
+MIT License
