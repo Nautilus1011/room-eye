@@ -1,0 +1,26 @@
+# サーボモータ・カメラ動作確認用の設定
+# BCM番号での GPIO ピン割り当て
+# 可動域の定義は .claude/rules/hardware.md を参照
+servo:
+  horizontal:  # パン軸。正面 0°、左右にそれぞれ 90°（合計180度）
+    gpio_pin: 14
+    min_angle: -90
+    max_angle: 90
+    min_pulse_width: 0.0005  # 秒 (SG90相当のパルス幅レンジ)
+    max_pulse_width: 0.0025  # 秒
+  vertical:  # チルト軸。水平 0°、直上 90°
+    gpio_pin: 15
+    min_angle: 0
+    max_angle: 90
+    min_pulse_width: 0.0005
+    max_pulse_width: 0.0025
+  sweep_step_deg: 15    # 動作確認スイープの角度刻み
+  sweep_wait_sec: 0.5   # 各角度で静止する秒数
+
+camera:
+  output_dir: outputs/servo_camera_check
+  filename_prefix: capture
+  resolution: [1280, 720]
+  # 配線の都合上カメラが物理的に180度回転して取り付けられているための補正
+  # 詳細は .claude/rules/hardware.md を参照
+  rotate_180: true
