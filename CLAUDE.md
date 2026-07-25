@@ -14,7 +14,7 @@
 ## ディレクトリの見方
 
 - `src/room_eye/`: パッケージ本体（エントリーポイント・共通処理）
-- `experiment/`: 実験・検証用の Notebook・スクリプト（使い捨て可）
+- `experiment/`: 実験・検証用の Notebook・スクリプト（使い捨て可）。各実験ディレクトリの説明ドキュメント`EXPERIMENT.md` を作成する
 - `data/`: 学習・推論用データ（Git 管理外）
 - `models/`: モデルファイル（Git 管理外）
 - `outputs/`: 推論結果・出力（Git 管理外）
@@ -81,3 +81,5 @@ docker compose exec dev bash -lc "python3 -m compileall src experiment"
 - `.claude/rules/coding-standards.md`
 - `.claude/rules/cv-research.md`
 - `.claude/rules/project-guardrails.md`
+- `.claude/rules/hardware.md`
+- `.claude/rules/experiment-report.md`
