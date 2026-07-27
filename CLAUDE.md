@@ -13,6 +13,7 @@
 
 ## ディレクトリの見方
 
+- `docs/`: 計画・設計方針とその判断理由（`roadmap.md` / `design/` / `plans/` / `adr/`）。まず `docs/README.md` を読む
 - `src/room_eye/`: パッケージ本体（エントリーポイント・共通処理）
 - `experiment/`: 実験・検証用の Notebook・スクリプト（使い捨て可）。各実験ディレクトリの説明ドキュメント`EXPERIMENT.md` を作成する
 - `data/`: 学習・推論用データ（Git 管理外）
@@ -102,3 +103,4 @@ docker compose exec dev bash -lc "python3 -m compileall src experiment"
 - `.claude/rules/project-guardrails.md`
 - `.claude/rules/hardware.md`
 - `.claude/rules/experiment-report.md`
+- `.claude/rules/documentation.md`
