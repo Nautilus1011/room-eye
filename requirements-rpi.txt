@@ -1,0 +1,27 @@
+# ------------------------------------------------------------------
+# Raspberry Pi 実機用 venv (venv/room-eye) の依存関係
+#
+# venv/room-eye は `python3 -m venv --system-site-packages` で作成されている。
+# picamera2 / libcamera / GPIO 系ライブラリは pip ではなく apt (dist-packages) 側の
+# システムパッケージをそのまま利用する前提のため、実機セットアップ時は先に
+# 以下を apt で用意すること（pip install だけでは picamera2 は動作しない）。
+#
+#   sudo apt install python3-picamera2 python3-libcamera python3-lgpio python3-rpi-lgpio
+#
+# GPU 側の学習・モデル開発環境（Docker/`dev` サービス）の依存関係は
+# requirements-dev.txt を参照。こちらと混同しないこと。
+#
+# 動作確認済みバージョン（2026-07-26 時点, Raspberry Pi OS / Python 3.13）
+# ------------------------------------------------------------------
+
+# カメラ（apt: python3-picamera2, python3-libcamera が必須）
+picamera2==0.3.36
+
+# GPIO / サーボ制御
+gpiozero==2.0.1
+lgpio==0.2.2.0
+rpi-lgpio==0.6
+
+# 設定ファイル読み込み・数値処理
+PyYAML==6.0.2
+numpy==2.2.4
