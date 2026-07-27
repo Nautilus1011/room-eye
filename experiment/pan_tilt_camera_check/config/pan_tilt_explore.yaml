@@ -1,0 +1,32 @@
+# パン・チルトで部屋を探索して撮影するスクリプトの設定
+# サーボの可動域定義は .claude/rules/hardware.md を参照
+servo:
+  horizontal:  # パン軸 GPIO14。正面 0°、左右90°ずつ（合計180度）
+    gpio_pin: 14
+    min_angle: -90
+    max_angle: 90
+    min_pulse_width: 0.0005
+    max_pulse_width: 0.0025
+  vertical:  # チルト軸 GPIO15。水平 0°、直上 90°
+    gpio_pin: 15
+    min_angle: 0
+    max_angle: 90
+    min_pulse_width: 0.0005
+    max_pulse_width: 0.0025
+  settle_wait_sec: 1.5  # 角度指定後、機構の揺れが収まるまで待つ時間
+  hold_release_wait_sec: 0.5  # 撮影直前にサーボを解放(detach)後、完全に静止するまで待つ時間
+
+camera:
+  output_dir: outputs/pan_tilt_explore
+  filename_prefix: explore
+  resolution: [1280, 720]
+  rotate_180: true  # 配線都合の180度回転補正。.claude/rules/hardware.md 参照
+
+# 探索する (pan, tilt) の組み合わせ。可動域内であること
+waypoints:
+  - [-90, 15]
+  - [-45, 15]
+  - [0, 15]
+  - [45, 15]
+  - [90, 15]
+  - [0, 90]
