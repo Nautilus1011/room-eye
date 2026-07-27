@@ -24,7 +24,8 @@
 
 ## 開発環境
 
-標準環境は Docker (`docker-compose.yml` の `dev` サービス) です。
+GPU を使ったモデル学習・開発は Docker (`docker-compose.yml` の `dev` サービス) を標準環境とします。
+依存関係は `requirements-dev.txt` にまとめています。
 
 ```bash
 # イメージビルド
@@ -38,6 +39,24 @@ docker compose exec dev bash
 ```
 
 VS Code を使う場合は `.devcontainer/devcontainer.json` が定義済みなので、**Dev Containers** 拡張でそのまま開けます。
+
+### 実機（Raspberry Pi）環境
+
+カメラ・サーボ等のハードウェアに直接アクセスするコード（`experiment/pan_tilt_camera_check/` 等）は、
+Docker コンテナではなくラズパイ本体上の `venv/room-eye` 仮想環境で実行することとする。
+
+- `venv/room-eye` は `python3 -m venv --system-site-packages` で作成されており、`picamera2` / `libcamera` /
+  GPIO 系ライブラリは apt でインストールした OS 側パッケージをそのまま利用する（pip 単体では入らないものを含む）
+- 依存関係は `requirements-rpi.txt` にまとめている。GPU 側の `requirements-dev.txt` とは別物なので混同しないこと
+- 実機でスクリプトを実行する場合:
+
+```bash
+source venv/room-eye/bin/activate
+python3 experiment/pan_tilt_camera_check/scripts/capture_photo.py
+```
+
+- 別マシン（GPU 環境）での AI モデル開発は `requirements-dev.txt`、ラズパイ実機でのハードウェア制御・実機検証は
+  `requirements-rpi.txt` と、用途に応じて依存関係ファイルを使い分ける。
 
 ## 実行コマンド
 
