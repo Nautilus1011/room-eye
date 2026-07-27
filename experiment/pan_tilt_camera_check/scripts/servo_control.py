@@ -8,22 +8,14 @@ from pathlib import Path
 import yaml
 from gpiozero import AngularServo
 
+from servo import build_servo
+
 CONFIG_PATH = Path(__file__).parent.parent / "config" / "servo_camera_check.yaml"
 
 
 def load_config() -> dict:
     with CONFIG_PATH.open(encoding="utf-8") as f:
         return yaml.safe_load(f)
-
-
-def build_servo(axis_config: dict) -> AngularServo:
-    return AngularServo(
-        axis_config["gpio_pin"],
-        min_angle=axis_config["min_angle"],
-        max_angle=axis_config["max_angle"],
-        min_pulse_width=axis_config["min_pulse_width"],
-        max_pulse_width=axis_config["max_pulse_width"],
-    )
 
 
 def sweep(servo: AngularServo, min_angle: float, max_angle: float, step_deg: float, wait_sec: float) -> None:

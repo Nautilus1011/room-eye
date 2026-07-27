@@ -82,3 +82,13 @@ python3 scripts/explore.py
 * [ ] ブレ量・角度再現精度を定量的に計測できる方法を検討し、`settle_wait_sec` /
       `hold_release_wait_sec` のチューニングを数値ベースで行えるようにする。
 * [ ] ハードウェア単体の動作確認が完了した前提で、自動追尾（トラッキング）ロジックの実験に進む。
+
+### 🔧 追記: カメラ・サーボ制御の共通化
+
+`capture_photo.py` / `servo_control.py` / `explore.py` で重複していたサーボ生成・可動域クランプ・
+Picamera2 のライフサイクル管理を `scripts/servo.py`（`build_servo` / `clamp` / `PanTilt`）と
+`scripts/camera.py`（`PanTiltCamera`）に切り出した。各スクリプトは config 読み込みと CLI 引数
+処理のみを担う薄い層とし、将来 `src/room_eye/` へ移植する際にこの2モジュールをそのまま
+移動できる形にしている。動作確認は本項の実験結果と同じ手順（実機での撮影・サーボスイープ・
+複数姿勢撮影）を再実行し、リファクタ前と同じ挙動になることを目視で確認予定（未実施の場合は
+PR の `## 補足情報` に理由を記載する）。
