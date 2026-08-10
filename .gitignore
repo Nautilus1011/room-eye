@@ -19,6 +19,9 @@ venv/*
 external/*
 !external/README.md
 
+# 調査・検討用の一時作業領域（成果物は docs/ にまとめる）
+workspace/
+
 # 配布用メタ情報は無視
 pre_commit.egg-info/
 
