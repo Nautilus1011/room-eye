@@ -121,5 +121,6 @@ python3 experiment/pan_tilt_camera_check/scripts/capture_photo.py
 
 **GNU Affero General Public License v3.0 (AGPL-3.0)**
 
-採用理由は [docs/adr/0003-agpl-license.md](docs/adr/0003-agpl-license.md)、
-サードパーティ由来ファイルの帰属は [NOTICE](NOTICE) を参照してください。
+Copyright (C) 2025-2026 Jin Yasuda
+
+採用理由は [docs/adr/0003-agpl-license.md](docs/adr/0003-agpl-license.md) を参照してください。

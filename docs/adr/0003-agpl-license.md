@@ -77,8 +77,24 @@ AGPL の義務は「配布」または「ネットワーク越しの提供」で
 
 - **過去に MIT で公開したリビジョンは MIT のまま**である。ライセンス変更は将来のリリースにのみ適用され、
   既に配布済みのバージョンを遡って取り消すことはできない
-- 初期コミットのスキャフォールド（`setup.cfg` / `tox.ini` / `.pre-commit-config.yaml` 等）は
-  MIT ライセンスのテンプレート由来である。その帰属は `NOTICE` に残す
+
+**変更前の `LICENSE` について**
+
+変更前の `LICENSE` は `MIT License / Copyright (c) 2021 Yoshikatsu Nishida` となっていたが、
+これは初期コミット（d9f7439）で複数のテンプレートを流用した際に混入した第三者の表記であり、
+本プロジェクトの著作権者ではない。
+
+初期コミットの内訳を調査した結果は以下のとおり。
+
+| ファイル | 出所 |
+| :--- | :--- |
+| `README.md`（初期版） | 日本語圏で流通している README テンプレート |
+| `.github/ISSUE_TEMPLATE/` / `.vscode/extensions.json` / `LICENSE` | 日本語話者の GitHub ボイラープレート |
+| `setup.cfg` / `setup.py` / `tox.ini` / `.pre-commit-config.yaml` / `.gitignore` | [pre-commit/pre-commit](https://github.com/pre-commit/pre-commit) |
+
+流用されたのは issue テンプレート・エディタ設定・ビルド設定のボイラープレートであり、
+著作権を主張しうる創作的表現には当たらないと判断し、第三者の帰属表記は残さない。
+本リポジトリの著作権者は Jin Yasuda とする。
 
 **C/C++ 移植（Phase 4）への影響**
 
