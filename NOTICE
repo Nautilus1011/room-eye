@@ -1,0 +1,20 @@
+room-eye
+Copyright (C) 2025-2026 Jin Yasuda
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version. See LICENSE for the full text.
+
+---
+
+## サードパーティ由来のファイル
+
+プロジェクトスキャフォールド（`setup.cfg` / `setup.py` / `tox.ini` /
+`.pre-commit-config.yaml` 等の設定ファイル）は、MIT License のテンプレートに由来する。
+
+    MIT License
+    Copyright (c) 2021 Yoshikatsu Nishida
+
+MIT License は AGPL-3.0 と互換であり、AGPL-3.0 のもとで再配布できる。
+上記の著作権表示は MIT License の要求に従い保持する。
