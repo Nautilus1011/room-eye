@@ -1,6 +1,6 @@
 ---
 作成日: 2026-07-27
-最終更新: 2026-07-27
+最終更新: 2026-08-11
 ステータス: active
 ---
 
@@ -33,13 +33,15 @@ docs/
 ├── roadmap.md                   プロジェクト全体の計画（Phase 0〜4）
 ├── design/                      設計方針（機能横断）
 │   ├── architecture.md          レイヤ構成と移植性を基準にした分割方針
-│   └── cpp-migration.md         C/C++ 移植方針・ライブラリ対応
+│   ├── cpp-migration.md         C/C++ 移植方針・ライブラリ対応
+│   └── edge-inference.md        ラズパイ CPU での物体検出（モデル・ランタイム選定）
 ├── plans/                       機能ごとの実験・開発方針
 │   └── auto-tracking.md         カメラ自動追尾
 └── adr/                         意思決定記録（Architecture Decision Record）
     ├── README.md
     ├── 0001-no-hydra-on-rpi.md
-    └── 0002-directory-layout.md
+    ├── 0002-directory-layout.md
+    └── 0003-agpl-license.md
 ```
 
 ## 索引
@@ -52,6 +54,7 @@ docs/
 
 - [design/architecture.md](design/architecture.md) — `hal` / `control` / `perception` のレイヤ構成、設定管理方式
 - [design/cpp-migration.md](design/cpp-migration.md) — C/C++ 移植の方針、ライブラリ対応表、ゴールデンデータによる検証
+- [design/edge-inference.md](design/edge-inference.md) — ラズパイ CPU での物体検出。モデル・ランタイムのライセンスと選定候補、パイプライン軽量化
 
 ### 機能別の計画
 
@@ -62,6 +65,7 @@ docs/
 - [adr/README.md](adr/README.md) — ADR の索引と書き方
 - [adr/0001-no-hydra-on-rpi.md](adr/0001-no-hydra-on-rpi.md) — ラズパイ実行系の設定管理に Hydra を採用しない
 - [adr/0002-directory-layout.md](adr/0002-directory-layout.md) — Python / C++ のディレクトリ構成
+- [adr/0003-agpl-license.md](adr/0003-agpl-license.md) — リポジトリのライセンスを MIT から AGPL-3.0 に変更する
 
 ## 運用ルール
 
