@@ -7,12 +7,15 @@
 - 名称: `room-eye`
 - 主題: ラズベリーパイ + カメラ + YOLO による自室のスマートホーム化
 - 実現したい機能:
+  - **カメラ自動追尾（パン・チルト制御）→ 人・犬を画面中心に保持** ← 現在の主対象
   - ハンドジェスチャー認識 → PC の Wake on LAN・扇風機・照明の制御
   - 床の空き面積算出 → 部屋の散らかり度の定量化
   - 物体カウント（コップ・ペットボトル等）→ 片付け通知
+- 全体計画は `docs/roadmap.md`、自動追尾の要件・設計方針は `docs/plans/auto-tracking.md` を参照する
 
 ## ディレクトリの見方
 
+- `docs/`: 計画・設計方針とその判断理由（`roadmap.md` / `design/` / `plans/` / `adr/`）。まず `docs/README.md` を読む
 - `src/room_eye/`: パッケージ本体（エントリーポイント・共通処理）
 - `experiment/`: 実験・検証用の Notebook・スクリプト（使い捨て可）。各実験ディレクトリの説明ドキュメント`EXPERIMENT.md` を作成する
 - `data/`: 学習・推論用データ（Git 管理外）
@@ -102,3 +105,4 @@ docker compose exec dev bash -lc "python3 -m compileall src experiment"
 - `.claude/rules/project-guardrails.md`
 - `.claude/rules/hardware.md`
 - `.claude/rules/experiment-report.md`
+- `.claude/rules/documentation.md`
